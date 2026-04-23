@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Gon Camping – Ved Larviksfjorden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Translate API -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+<header>
+    <div class="container nav-container">
+        <div class="logo">
+            <a href="#">Gon<span>Camping</span></a>
+            <div class="logo-sub">og hytteutleie</div>
+        </div>
+        <button class="hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a data-page="home" class="nav-link active">Hjem</a></li>
+            <li><a data-page="leie" class="nav-link">Leie</a></li>
+            <li><a data-page="fasiliteter" class="nav-link">Fasiliteter</a></li>
+            <li><a data-page="omoss" class="nav-link">Om oss</a></li>
+            <li><a data-page="kontakt" class="nav-link">Kontakt</a></li>
+            <li class="lang-switch">
+                <button class="flag-btn" data-lang="no" title="Norsk">🇳🇴</button>
+                <button class="flag-btn" data-lang="en" title="English">🇬🇧</button>
+                <button class="flag-btn" data-lang="de" title="Deutsch">🇩🇪</button>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <!-- HJEMMESIDE (med nyheter integrert) -->
+    <div id="page-home" class="page-section active-section">
+        <div class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <h1>Gon Camping – Velkommen til sommer ved Larviksfjorden</h1>
+                    <p>Gon Camping og hytteutleie ligger idyllisk til ved Larviksfjorden i Vestfold, en kort kjøretur fra Larvik sentrum og Color Line-terminalen. Vi har en barnevennlig sandstrand, varme svaberg, sandvolleyballbane, fotballbane, lekeplass og en koselig kiosk. Sesongen varer hele året – velkommen!</p>
+                    <div class="hero-buttons">
+                        <a data-page="leie" class="btn btn-primary nav-link">Se leiealternativer</a>
+                        <a data-page="kontakt" class="btn btn-outline nav-link">Kontakt oss</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/strand.jpg" alt="Strand ved Gon Camping" class="lightbox-trigger" data-img="images/strand.jpg">
+                </div>
+            </div>
+        </div>
+
+        <!-- NYHETTER -->
+        <div class="container news-section">
+            <h2 class="section-title">Nyheter</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <span class="news-date">1. mai 2025</span>
+                    <h3>Kiosken åpner for sesongen</h3>
+                    <p>Serverer is, kaffe og enkle måltider – velkommen innom!</p>
+                </div>
+                <div class="news-card">
+                    <span class="news-date">April 2025</span>
+                    <h3>Gratis WiFi i resepsjonsområdet</h3>
+                    <p>Nå kan du koble deg på vårt gratis WiFi i resepsjonen og kiosken.</p>
+                </div>
+                <div class="news-card">
+                    <span class="news-date">Sommer 2025</span>
+                    <h3>Oppgraderte lekeapparater</h3>
+                    <p>Nye og spennende lekeapparater kommer til sommeren – gled deg!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEIE (med bookingskjema) -->
+    <div id="page-leie" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Leie – overnatting</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="images/hytte_utvendig.jpg" alt="Hytte" class="lightbox-trigger" data-img="images/hytte_utvendig.jpg">
+                    <div class="card-content">
+                        <h3>Hytter (4 personer)</h3>
+                        <p>Køyesenger + dobbel sovesofa, minikjøkken med kjøleskap, kokeplater, kaldt/varmt vann. Dyner og puter inkludert – sengetøy medbringes.</p>
+                        <p class="price">600 kr/natt + 200 kr sluttrengjøring</p>
+                        <p>Inn/utsjekk: 13:00 – 12:00</p>
+                        <a href="tel:+4794845233" class="btn btn-small"><i class="fas fa-phone"></i> +47 948 45 233</a>
+                        <p class="note">100 hytter totalt (endres senere). Åpent hele året.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="images/strandstua.jpg" alt="Strandstue" class="lightbox-trigger" data-img="images/strandstua.jpg">
+                    <div class="card-content">
+                        <h3>Telt, bobil & campingvogn</h3>
+                        <p>40 korttidsplasser (endres senere). Sesong hele året.</p>
+                        <ul class="price-list">
+                            <li>Telt: 250–500 kr/natt</li>
+                            <li>Bobil/campingvogn uten fortelt: 450 kr/natt (strøm inkl.)</li>
+                            <li>Bobil/campingvogn med fortelt: 500 kr/natt (strøm inkl.)</li>
+                            <li>Dusj: 20 kr</li>
+                            <li>Vask/tørk: 50 kr</li>
+                            <li>Gratis WiFi i resepsjonsområdet</li>
+                        </ul>
+                        <p>Inn/utsjekk: 13:00 – 12:00</p>
+                        <a href="tel:+4792028387" class="btn btn-small"><i class="fas fa-phone"></i> +47 920 28 387</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOOKINGSKJEMA -->
+            <div class="booking-form">
+                <h3>📅 Forespørsel / booking</h3>
+                <p>Fyll ut skjemaet – vi sender deg en bekreftelse. Betaling ved ankomst.</p>
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Type opphold *</label>
+                            <select name="type" required>
+                                <option value="Hytte">Hytte</option>
+                                <option value="Telt">Telt</option>
+                                <option value="Bobil/campingvogn">Bobil/campingvogn</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Antall personer *</label>
+                            <input type="number" name="people" min="1" max="10" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Ankomstdato *</label>
+                            <input type="date" name="arrival" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Avreisedato *</label>
+                            <input type="date" name="departure" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Fullt navn *</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-post *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon (valgfritt)</label>
+                        <input type="tel" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label>Kommentar / spesielle ønsker</label>
+                        <textarea name="message" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send bookingforespørsel</button>
+                </form>
+                <div id="bookingStatus" class="form-status"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FASILITETER + NÆROMRÅDET -->
+    <div id="page-fasiliteter" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Fasiliteter</h2>
+            <div class="facilities-wrapper">
+                <div class="facilities-list-col">
+                    <ul class="facility-list">
+                        <li><i class="fas fa-toilet"></i> Toalett- og dusjanlegg (HC-toalett)</li>
+                        <li><i class="fas fa-store"></i> Kiosk / resepsjon ved innkjøringen</li>
+                        <li><i class="fas fa-utensils"></i> Felleskjøkken (matlaging & oppvask)</li>
+                        <li><i class="fas fa-tshirt"></i> Vaskeri (50 kr pr. vask/tørk)</li>
+                        <li><i class="fas fa-dumpster"></i> Tømmestasjon for campingvogn/bobil</li>
+                        <li><i class="fas fa-parking"></i> Parkering inkludert</li>
+                        <li><i class="fas fa-volleyball-ball"></i> Sandvolleyballbane, fotballbane, lekeplass</li>
+                        <li><i class="fas fa-wifi"></i> WiFi gratis i resepsjon/kiosk</li>
+                        <li><i class="fas fa-heartbeat"></i> Hjertestarter & brannutstyr i kiosk/vaktrom</li>
+                        <li><i class="fas fa-recycle"></i> Kildesortering</li>
+                    </ul>
+                </div>
+                <div class="facilities-images-col">
+                    <div class="mini-card-grid">
+                        <div class="mini-card">
+                            <img src="images/lekeplass.jpg" alt="Lekeplass" class="lightbox-trigger" data-img="images/lekeplass.jpg">
+                            <p>Barnevennlig lekeplass</p>
+                        </div>
+                        <div class="mini-card">
+                            <img src="images/toaletter.jpg" alt="Sanitærbygning" class="lightbox-trigger" data-img="images/toaletter.jpg">
+                            <p>Moderne dusj- og toalettanlegg</p>
+                        </div>
+                        <div class="mini-card">
+                            <img src="images/svaberg.jpg" alt="Svaberg" class="lightbox-trigger" data-img="images/svaberg.jpg">
+                            <p>Varme svaberg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subheading">Nærområdet</h3>
+            <div class="card-grid">
+                <div class="card"><div class="card-content"><i class="fas fa-utensils"></i> <strong>Seilerhytta</strong><br>Ødegårdsveien 20</div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-utensils"></i> <strong>Hølen Matbar</strong><br>Ivar Hesselbergsvei 23</div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-palette"></i> <strong>Galleri Bakhagen</strong><br>Gonveien 27</div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-bowling-ball"></i> <strong>Mester'n Bowling</strong><br>Skreppestadveien 26</div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-apple-alt"></i> <strong>Åkersmak gård</strong><br>Husebyveien 70</div></div>
+                <div class="card"><div class="card-content"><i class="fas fa-bus"></i> <strong>Buss linje 210</strong><br>Fra Larvik stasjon</div></div>
+            </div>
+            <p class="area-more">Tur- og sykkelmuligheter rett utenfor campingen.</p>
+        </div>
+    </div>
+
+    <!-- OM OSS -->
+    <div id="page-omoss" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Om oss</h2>
+            <div class="about-content">
+                <p><strong>Eies av Larvik Juvente</strong> – ungdomsorganisasjon for rusfri utvikling, fred og toleranse.</p>
+                <p>Hele campingområdet er rusfritt. Vi oppfordrer alle gjester til å respektere dette og bidra til et trygt miljø.</p>
+                <ul>
+                    <li><strong>Ro-tider:</strong> 23:00 – 07:00</li>
+                    <li><strong>Dyr tillatt</strong> med restriksjoner (båndtvang, ikke i hytter uten avtale)</li>
+                    <li><strong>Hjertestarter / brannutstyr:</strong> i kiosk/vaktrommet</li>
+                    <li>Kildesortering på plassen – ta vare på naturen</li>
+                </ul>
+            </div>
+
+            <h3 class="subheading">Veibeskrivelse</h3>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Gonveien 100, 3260 Larvik</strong></p>
+                <p><i class="fas fa-bus"></i> Buss linje 210 fra Larvik stasjon/sentrum</p>
+                <iframe width="100%" height="250" style="border:0; border-radius:1rem; margin-top:1rem;" loading="lazy" src="https://www.google.com/maps?q=Gonveien+100+3260+Larvik&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- KONTAKT (egen fane med kontaktskjema) -->
+    <div id="page-kontakt" class="page-section">
+        <div class="container">
+            <h2 class="section-title">Kontakt oss</h2>
+            <div class="contact-page-wrapper">
+                <div class="contact-info-simple">
+                    <p><i class="fas fa-phone-alt"></i> <strong>Korttidsplasser:</strong> <a href="tel:+4792028387">+47 920 28 387</a></p>
+                    <p><i class="fas fa-phone-alt"></i> <strong>Hytter:</strong> <a href="tel:+4794845233">+47 948 45 233</a></p>
+                    <p><i class="fas fa-envelope"></i> <strong>E-post:</strong> <a href="mailto:goncampinglarvik@gmail.com">goncampinglarvik@gmail.com</a></p>
+                </div>
+                <div class="contact-form-full">
+                    <h3>📧 Send oss en melding</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Ditt navn *</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Din e-post *</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Melding *</label>
+                            <textarea name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send melding</button>
+                    </form>
+                    <div id="contactStatus" class="form-status"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-content">
+        <p>© 2025 Gon Camping – Rusfri camping ved Larviksfjorden</p>
+        <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+        </div>
+        <p><a data-page="home" class="nav-link back-to-top">Til toppen</a></p>
+    </div>
+</footer>
+
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img id="lightbox-img" src="">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
