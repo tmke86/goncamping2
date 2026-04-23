@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // ---------- FORMBEHANDLING (samme som før) ----------
+    // ---------- FORMBEHANDLING (Formspree) ----------
     const FORMSPREE_BOOKING_URL = "https://formspree.io/f/DIN_BOOKING_ID";
     const FORMSPREE_CONTACT_URL = "https://formspree.io/f/DIN_KONTAKT_ID";
 
@@ -129,53 +129,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ---------- GOOGLE TRANSLATE ----------
-    // Denne funksjonen kalles automatisk når Google Translate-skriptet er lastet
-    window.googleTranslateElementInit = function() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'no',
-            includedLanguages: 'no,en,de',
-            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-        }, 'google_translate_element');
-        
-        // Skjul Google Translate sin egen meny og banner
-        const googleFrame = document.querySelector('.goog-te-menu-frame');
-        if (googleFrame) googleFrame.style.display = 'none';
-        setTimeout(() => {
-            const googleToolbar = document.querySelector('.goog-te-gadget');
-            if (googleToolbar) googleToolbar.style.display = 'none';
-        }, 500);
-    };
-    
-    // Opprett en skjult div for Google Translate widget (nødvendig for API)
-    const translateDiv = document.createElement('div');
-    translateDiv.id = 'google_translate_element';
-    translateDiv.style.display = 'none';
-    document.body.appendChild(translateDiv);
-    
-    // Funksjon for å bytte språk via Google Translate sin komboboks
-    function setGoogleTranslateLanguage(langCode) {
-        // Finn Google Translate sin select-boks
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-            select.value = langCode;
-            select.dispatchEvent(new Event('change'));
+    // ---------- TRANSLATE.JS (AI-basert oversettelse) ----------
+    // Vent til translate.js er lastet
+    function initTranslate() {
+        if (typeof Translate !== 'undefined') {
+            // Sett originalspråk til norsk
+            Translate.setSourceLanguage('no');
+            // Unngå oversettelse av input-felter og skjemaelementer
+            Translate.ignore.class.push('notranslate');
+            Translate.ignore.tag.push('INPUT');
+            Translate.ignore.tag.push('TEXTAREA');
+            Translate.ignore.tag.push('SELECT');
+            Translate.ignore.tag.push('CODE');
+            
+            // Start oversettelse
+            Translate.execute();
+            
+            // Koble flaggknappene til språkbytte
+            const flagButtons = document.querySelectorAll('.flag-btn');
+            flagButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const lang = btn.getAttribute('data-lang');
+                    let targetLang = 'no';
+                    if (lang === 'en') targetLang = 'en';
+                    if (lang === 'de') targetLang = 'de';
+                    Translate.changeLanguage(targetLang);
+                });
+            });
         } else {
-            // Hvis select-boksen ikke er lastet ennå, prøv igjen etter kort tid
-            setTimeout(() => setGoogleTranslateLanguage(langCode), 200);
+            // Hvis Translate ikke er lastet ennå, prøv igjen om 100ms
+            setTimeout(initTranslate, 100);
         }
     }
-    
-    // Koble flaggknappene til språkbytte
-    const flagButtons = document.querySelectorAll('.flag-btn');
-    flagButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const lang = btn.getAttribute('data-lang');
-            let googleLang = 'no';
-            if (lang === 'en') googleLang = 'en';
-            if (lang === 'de') googleLang = 'de';
-            setGoogleTranslateLanguage(googleLang);
-        });
-    });
+    initTranslate();
 });
